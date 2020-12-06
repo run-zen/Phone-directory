@@ -1,0 +1,27 @@
+Phonebook directory have three main operations:
+
+1.Searching
+2.Sorting
+3.Deleting
+
+We will be implementing the operations listed below:-
+
+1)DELETE SAME NUMBER
+2)DELETE SAME NAME
+3)SEARCH
+4)DELETE CONATCT
+5)DISPLAY CONTACT display (in sorted order)
+6)UPDATE DETAILS OF EXISTING CONTACT-A)NAME
+                 		     B)NUMBER
+                 		     C)G-MAIL
+7)INSERT CONTACT
+
+
+*******************************************
+Example of a contact is :
+
+NAME :: vijay 
+NUMBER:: +91-1234567890 
+G-MAIL:: vijay@gmail.com
+
+So, basically a contact will have the following details as shown for the above contact.
