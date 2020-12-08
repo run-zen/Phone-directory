@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include "displayName.c"
 #include<stdlib.h>
 #include<string.h>
 #include<ctype.h>
@@ -208,6 +207,7 @@ void searchContact() {
      printf("\n\n\t  1.Search by name.\n\t  2.Search by number.\n\t  3.Go back");
      while(1) {
           printf("\n\n  Enter your choice : ");
+          getchar();
           scanf("%d", &choice);
           if(choice == 1 ) {
                printf("\n  Enter name : ");
@@ -257,7 +257,8 @@ void addContact() {
         exit(1);
      }
      printf("\nEnter name : ");
-     scanf("%s", name);
+     getchar();
+     gets(name);
      fputs(name,fptr);
      fprintf(fptr, "%c", ',');
      printf("\nEnter number : ");
@@ -299,7 +300,8 @@ void deleteByName(char str[]) {
           saveList();
      }
      else {
-          printf("\n\n\t  No contact named %s \n", str);
+          printf("\n\n\t  No contact named \"%s\" \n", str);
+          printf("\n\n\t  Try Searching for the contact first.\n");
      }
 
 }
@@ -334,7 +336,8 @@ void deleteByNumber(char str[]) {
           saveList();
      }
      else {
-          printf("\n\n\t  No contact with number %s \n", str);
+          printf("\n\n\t  No contact with number \"%s\" \n", str);
+          printf("\n\n\t  Try Searching for the contact first.\n");
      }
 }
 
@@ -345,26 +348,28 @@ void deleteContact() {
      printf("\n\n\t  1.Delete by name.\n\t  2.Delete by number.\n\t  3.Go back.");
      while(1) {
           printf("\n\n  Enter your choice : ");
+          getchar();
           scanf("%d", &choice);
-          if(choice == 1 ) {
+          if(choice < 1 || choice > 3) {
+               printf("\n Invalid Choice : Enter again.");
+               continue;
+          }
+          else if(choice == 1 ) {
                printf("\n  Enter name to delete : ");
-               scanf("%s", str);
+               getchar();
+               gets(str);
                deleteByName(str);
                break;
           }
           else if(choice == 2) {
                printf("\n  Enter number to delete : ");
-               scanf("%s", str);
+               getchar();
+               gets(str);
                deleteByNumber(str);
                break;
           }
           else if(choice == 3) {
                break;
-          }
-          else
-          {
-               printf("\n Invalid Choice : Enter again.");
-               continue;
           }
      }
 }
@@ -373,6 +378,7 @@ int main() {
      readPhoneBook();
      int choice;
      while(1) {
+          printf("\n\t***************************************");
           printf("\n\t\t\tMenu");
           printf("\n\n\t1.Show Contacts\t\t2.Add Contact");
           printf("\n\n\t3.Search Contact\t4.Delete Contact");
