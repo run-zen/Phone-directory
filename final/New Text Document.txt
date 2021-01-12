@@ -1,0 +1,24 @@
+1. int strCmp(char s1[], char s2[]) 
+2. int compareStr(char str1[], char str2[]) 
+3. int ischar(char c) 
+4. linked list :
+a. void pushEnd(struct node** head_ref, char name[], char number[]) 
+b. void push(struct node** head_ref, char name[], char number[])
+5. void readPhoneBook() 
+6. merge sort:
+a. void FrontBackSplit(struct node* source,struct node** frontRef,struct node** backRef)
+b. struct node* SortedMerge(struct node* a, struct node* b)
+c. void MergeSort(struct node** headRef)
+7. void displayContacts(struct node* head_ref) 
+8. search 
+a. void searchByName(char str[]) 
+b. void searchByNumber(char str[]) 
+c. void searchContact() 
+9. void saveList() 
+10. void addContact()
+11. delete :
+a. void deleteByName(char str[])
+b. void deleteByNumber(char str[])
+c. void deleteContact() 
+12. void displaysorted() 
+13. int main()
